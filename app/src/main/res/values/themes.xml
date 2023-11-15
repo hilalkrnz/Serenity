@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Serenity" parent="Base.Theme.Serenity" />
+
+    <style name="StrikethroughTextStyle">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
 </resources>

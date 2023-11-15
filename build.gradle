@@ -1,15 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
 id 'com.android.application' version '8.1.2' apply false
-    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
-    id 'com.google.devtools.ksp' version '1.8.10-1.0.9' apply false
-    id 'com.google.dagger.hilt.android' version '2.44' apply false
-    id 'androidx.navigation.safeargs' version '2.5.3' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
+    id 'com.google.dagger.hilt.android' version '2.48.1' apply false
+    id 'androidx.navigation.safeargs' version '2.7.5' apply false
+    id 'com.google.gms.google-services' version '4.4.0' apply false
 }
 
 ext {
     // AndroidX
-    android_core_ktx_version = "1.8.10"
+    android_core_ktx_version = "1.12.0"
     app_compat_version = "1.6.1"
 
     // Lifecycle
@@ -38,10 +38,16 @@ ext {
     room_version = '2.6.0'
 
     // Navigation Component
-    nav_version = '2.7.4'
+    nav_version = '2.7.5'
+
+    //Glide
+    glide_version = "4.16.0"
 
     // Splash Screen
     splash_version = "1.0.0-beta02"
+
+    // Lottie
+    lottieVersion = "3.4.0"
 
     // Junit
     junit_version = "4.13.2"

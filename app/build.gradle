@@ -1,10 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.devtools.ksp'
     id 'com.google.dagger.hilt.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -21,6 +21,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,18 +32,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 
 dependencies {
 
     // AndroidX
-    implementation "androidx.core:core-ktx:1.12.0"
+    implementation "androidx.core:core-ktx:$android_core_ktx_version"
     implementation "androidx.appcompat:appcompat:$app_compat_version"
 
     // Lifecycle
@@ -64,19 +68,32 @@ dependencies {
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
-    ksp "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation 'com.google.firebase:firebase-auth-ktx:22.2.0'
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     // Room components
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
-    ksp "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    //Chucker
+    implementation "com.github.chuckerteam.chucker:library:4.0.0"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+
     // Splash Screen
     implementation "androidx.core:core-splashscreen:1.1.0-alpha02"
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.5.0')
 
     // Junit
     testImplementation "junit:junit:$junit_version"

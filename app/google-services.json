@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367156421488",
+    "project_id": "serenity-102a2",
+    "storage_bucket": "serenity-102a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367156421488:android:e02bcac7953ab9ffe9e5b5",
+        "android_client_info": {
+          "package_name": "com.example.serenity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyzd4InDoJQFQ6E5XiwnMonhvgJNS3To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

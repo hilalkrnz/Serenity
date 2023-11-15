@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Serenity</string>
+
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="favorites">Favorites</string>
+
+    <string name="discounts">Discounts</string>
+    <string name="allProducts">All Products</string>
+
+    <string name="search_hint">Search</string>
+
+    <string name="card_number">Card number</string>
+    <string name="nameOnCard">Name on card</string>
+    <string name="expiryDate">Expiry month date</string>
+    <string name="cvv">CVV</string>
+    <string name="adress">Adress</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="year">Expiry year date</string>
+    <string name="complete_order">Complete Order</string>
+    <string name="continue_shopping">Continue Shopping</string>
+
+    <string name="email">Email</string>
+    <string name="sign_in_title">Welcome to Serenity</string>
+    <string name="password">Password</string>
+    <string name="click_to_create_a_new_account">Click to create a new account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="payment">Payment</string>
+    <string name="delete_all">Delete All</string>
+    <string name="cart_empty_message">There are no products in your cart.</string>
 </resources>
