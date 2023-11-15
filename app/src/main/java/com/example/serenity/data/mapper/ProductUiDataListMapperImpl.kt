@@ -10,8 +10,8 @@ class ProductUiDataListMapperImpl @Inject constructor() : ListMapper<Product, Pr
             ProductUiData(
                 id = it.id,
                 title = it.title.orEmpty(),
-                price = it.price,
-                salePrice = it.salePrice,
+                price = "${it.price} ₺",
+                salePrice = "${it.salePrice} ₺",
                 description = it.description.orEmpty(),
                 category = it.category.orEmpty(),
                 imageOne = it.imageOne.orEmpty(),

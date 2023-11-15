@@ -36,3 +36,7 @@ fun AppCompatEditText.observeTextChanges(): Flow<String> {
 }
 
 infix fun String.okWith(bound: Int) = length > bound
+
+fun String?.extractPrice(): Double {
+    return this?.replace("₺", "")?.trim()?.toDoubleOrNull() ?: 0.0
+}

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.serenity.R
+import com.example.serenity.common.extractPrice
 import com.example.serenity.common.gone
 import com.example.serenity.common.viewBinding
 import com.example.serenity.common.visible
@@ -47,16 +48,19 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
                     adapter.updateData(emptyList())
                     tvEmpty.visible()
                     tvEmpty.text = getString(R.string.cart_empty_message)
+                    calculateAndDisplayTotalPrice(emptyList())
                 }
 
                 is CartState.ProductRemoved -> {
                     adapter.removeProduct(state.productId)
+                    viewModel.getCartProducts()
                 }
 
                 is CartState.SuccessListState -> {
                     progressBar.gone()
                     handleSuccessCartState(state.products)
                     paymentButton.isEnabled = state.products.isNotEmpty()
+                    calculateAndDisplayTotalPrice(state.products)
                 }
 
                 is CartState.EmptyScreen -> {
@@ -64,6 +68,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
                     tvEmpty.visible()
                     tvEmpty.text = state.failMessage
                     paymentButton.isEnabled = false
+                    calculateAndDisplayTotalPrice(emptyList())
                 }
 
                 is CartState.ShowPopUp -> {
@@ -78,6 +83,18 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
     private fun handleSuccessCartState(data: List<ProductUiData>) {
         adapter.updateData(data)
     }
+
+    private fun calculateAndDisplayTotalPrice(products: List<ProductUiData>) {
+        val totalPrice = products.sumOf { product ->
+            val price = product.price.extractPrice()
+            val salePrice = product.salePrice.extractPrice()
+            if (product.saleState == true) salePrice else price
+        }
+
+        val formattedTotalPrice = String.format("%.2f", totalPrice)
+        binding.totalPrice.text = "$formattedTotalPrice ₺"
+    }
+
 
     private fun setOnClickListener() {
         binding.deleteAll.setOnClickListener {

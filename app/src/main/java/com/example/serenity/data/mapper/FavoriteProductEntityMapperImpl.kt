@@ -10,7 +10,7 @@ class FavoriteProductEntityMapperImpl @Inject constructor() :
         return FavoriteProductEntity(
             productId = input?.id,
             title = input?.title.orEmpty(),
-            price = input?.price,
+            price = input?.price?.toDouble(),
             description = input?.description.orEmpty(),
             category = input?.category.orEmpty(),
             imageOne = input?.imageOne.orEmpty(),

@@ -10,13 +10,13 @@
         android:id="@+id/deleteAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
         android:text="@string/delete_all"
-        android:textSize="16sp"
         android:textColor="@color/black"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/space_16"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartProductsRv"
@@ -31,16 +31,29 @@
         app:spanCount="2"
         tools:listitem="@layout/adapter_product_item" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_12"
+        android:layout_marginBottom="32dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="120 ₺" />
+
     <Button
         android:id="@+id/paymentButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_12"
-        android:text="@string/payment"
+        android:layout_marginHorizontal="@dimen/space_12"
         android:enabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/payment"
+        app:layout_constraintBottom_toBottomOf="@+id/totalPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/totalPrice"
+        app:layout_constraintTop_toTopOf="@+id/totalPrice" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_empty"

@@ -3,9 +3,9 @@ package com.example.serenity.ui.detail
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.serenity.R
@@ -68,12 +68,15 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         productTitle.text = data.title
         productPrice.text = data.price.toString()
         productDescription.text = data.description
+        rating.text = data.rate.toString()
+        ratingBar.rating = data.rate!!.toFloat()
         if (data.saleState == true) {
             productSalePrice.apply {
                 text = data.salePrice.toString()
                 visibility = View.VISIBLE
             }
-
+            productPrice.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+            view.visible()
         } else {
             productSalePrice.visibility = View.GONE
         }

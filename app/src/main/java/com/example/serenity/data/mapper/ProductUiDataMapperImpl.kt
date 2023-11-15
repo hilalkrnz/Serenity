@@ -9,8 +9,8 @@ class ProductUiDataMapperImpl @Inject constructor() : Mapper<Product, ProductUiD
         return ProductUiData(
             id = input?.id,
             title = input?.title.orEmpty(),
-            price = input?.price,
-            salePrice = input?.salePrice,
+            price = "${input?.price} ₺",
+            salePrice = "${input?.salePrice} ₺",
             description = input?.description.orEmpty(),
             category = input?.category.orEmpty(),
             imageOne = input?.imageOne.orEmpty(),

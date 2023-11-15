@@ -3,8 +3,8 @@ package com.example.serenity.domain.model
 data class ProductUiData(
     val id: Int?,
     val title: String,
-    val price: Double?,
-    val salePrice: Double?,
+    val price: String?,
+    val salePrice: String?,
     val description: String,
     val category: String,
     val imageOne: String,
